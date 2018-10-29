@@ -1,22 +1,17 @@
 import React from 'react'
 import * as BooksAPI from './BooksAPI'
-
 import { Route } from 'react-router-dom'
-
 import './App.css'
-
 import Search from './components/Search'
 import List from './components/List'
 
 
-class BooksApp extends React.Component {
+class BookManager extends React.Component {
   state = {
-
-    books: [],
     query: '',
-    searchRes: [],
+    shearches: [],
     validSearch: true,
-
+    books: [],
   }
 
   componentDidMount() {
@@ -50,24 +45,24 @@ class BooksApp extends React.Component {
   searchOutput = (query) => {
     if (query) {
 
-      BooksAPI.search(query).then((searchRes) => {
-        console.log(searchRes)
+      BooksAPI.search(query).then((shearches) => {
+        console.log(shearches)
 
-        if (searchRes.error) {
+        if (shearches.error) {
           this.setState({
-            searchRes: [],
+            shearches: [],
             validSearch: false
           })
 
         } else {
-          searchRes.map(bookFromSearch =>
+          shearches.map(bookFromSearch =>
             (this.state.books.map(bookFromShelf =>
               bookFromShelf.id === bookFromSearch.id ?
                 bookFromSearch.shelf = bookFromShelf.shelf :
                 "")))
 
           this.setState({
-            searchRes: searchRes,
+            shearches: shearches,
             validSearch: true
           })
         }
@@ -75,7 +70,7 @@ class BooksApp extends React.Component {
 
     } else {
       this.setState({
-        searchRes: [],
+        shearches: [],
         validSearch: true
       })
     }
@@ -99,7 +94,7 @@ class BooksApp extends React.Component {
           <Search
             query={this.state.query}
             updateQuery={this.updateQuery}
-            output={this.state.searchRes}
+            output={this.state.shearches}
             changeShelf={this.changeShelf}
             validSearch={this.state.validSearch}
           />
@@ -111,4 +106,4 @@ class BooksApp extends React.Component {
   }
 }
 
-export default BooksApp
+export default BookManager
