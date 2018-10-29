@@ -4,7 +4,7 @@ const Book = ({ book, changeShelf }) => {
 
     const { imageLinks, shelf, title, authors } = book
 
-    const bookThumb = imageLinks ?
+    const bookImage = imageLinks ?
         imageLinks.thumbnail :
         'https://via.placeholder.com/128x193?text=No%20Cover'
 
@@ -18,7 +18,7 @@ const Book = ({ book, changeShelf }) => {
                     style={{
                         width: 128,
                         height: 193,
-                        backgroundImage: `url("${bookThumb}")`
+                        backgroundImage: `url("${bookImage}")`
                     }}>
                 </div>
 

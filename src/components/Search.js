@@ -4,7 +4,7 @@ import Book from './Book'
 
 const Search = props => {
 
-    const { output, query, updateQuery, changeShelf, validSearch } = props
+    const { output, query, updateQuery, changeShelf, goodSearch } = props
 
     return (
         <div className="search-books">
@@ -29,7 +29,7 @@ const Search = props => {
                 <ol className="books-grid">
 
                     {
-                        validSearch ?
+                        goodSearch ?
                             output.map(output => (
 
                                 <li key={output.id}>

@@ -10,7 +10,7 @@ class BookManager extends React.Component {
   state = {
     query: '',
     shearches: [],
-    validSearch: true,
+    goodSearch: true,
     books: [],
   }
 
@@ -51,7 +51,7 @@ class BookManager extends React.Component {
         if (shearches.error) {
           this.setState({
             shearches: [],
-            validSearch: false
+            goodSearch: false
           })
 
         } else {
@@ -63,7 +63,7 @@ class BookManager extends React.Component {
 
           this.setState({
             shearches: shearches,
-            validSearch: true
+            goodSearch: true
           })
         }
       })
@@ -71,7 +71,7 @@ class BookManager extends React.Component {
     } else {
       this.setState({
         shearches: [],
-        validSearch: true
+        goodSearch: true
       })
     }
   }
@@ -96,7 +96,7 @@ class BookManager extends React.Component {
             updateQuery={this.updateQuery}
             output={this.state.shearches}
             changeShelf={this.changeShelf}
-            validSearch={this.state.validSearch}
+            goodSearch={this.state.goodSearch}
           />
 
         )} />
