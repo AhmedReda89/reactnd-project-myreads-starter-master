@@ -23,7 +23,7 @@ const search = ({ books, changeShelf }) => {
 
         <div className="list-books">
 
-            <Header title='MyReads' />
+            <Header title='Books Manager' />
 
             <div className="list-books-content">
                 <div>
