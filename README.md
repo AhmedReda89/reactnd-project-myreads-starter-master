@@ -9,7 +9,7 @@ A books manger app to manage your books and hmotivate you to read
 
 ## Installation
 
-open you cmd in yoyr folder then run `npm install` 
+open you cmd in your folder then run `npm install` 
 
 ### Acknowledgement
 
